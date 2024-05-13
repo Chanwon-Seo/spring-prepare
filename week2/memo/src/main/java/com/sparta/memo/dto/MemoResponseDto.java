@@ -2,7 +2,6 @@ package com.sparta.memo.dto;
 
 import com.sparta.memo.entitiy.Memo;
 import lombok.Getter;
-import lombok.Setter;
 
 @Getter
 public class MemoResponseDto {
