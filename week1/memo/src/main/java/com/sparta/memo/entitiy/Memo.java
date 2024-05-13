@@ -18,4 +18,9 @@ public class Memo {
         this.username = dto.getUsername();
         this.contents = dto.getContents();
     }
+
+    public void update(MemoRequestDto dto) {
+        this.username = dto.getUsername();
+        this.contents = dto.getContents();
+    }
 }

@@ -39,4 +39,32 @@ public class MemoController {
                 .map(MemoResponseDto::new).toList();
     }
 
+    @PutMapping("/memos/{id}")
+    public Long updateMemo(@PathVariable Long id, @RequestBody MemoRequestDto requestDto) {
+        // db에 존재 여부
+        if (memoList.containsKey(id)) {
+            //해당 메모 가져오기
+            Memo memo = memoList.get(id);
+
+            //memo 수정
+            memo.update(requestDto);
+
+            return memo.getId();
+        } else {
+            throw new IllegalArgumentException("선택한 메모는 존재하지 않습니다.");
+        }
+    }
+
+    @DeleteMapping("/memos/{id}")
+    public Long deleteMemo(@PathVariable Long id) {
+        // db에 존재 여부
+        if (memoList.containsKey(id)) {
+            memoList.remove(id);
+            return id;
+        } else {
+            throw new IllegalArgumentException("선택한 메모는 존재하지 않습니다.");
+        }
+
+    }
+
 }
