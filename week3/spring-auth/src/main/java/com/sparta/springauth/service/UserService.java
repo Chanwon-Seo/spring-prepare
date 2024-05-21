@@ -51,13 +51,14 @@ public class UserService {
         }
 
         // 사용자 등록
-        User build = User.builder()
-                .username(username)
-                .password(password)
-                .email(email)
-                .role(role)
-                .build();
-        userRepository.save(build);
+        User user = new User(username, password, email, role);
+//        User build = User.builder()
+//                .username(username)
+//                .password(password)
+//                .email(email)
+//                .role(role)
+//                .build();
+        userRepository.save(user);
     }
 
     public void login(LoginRequestDto requestDto, HttpServletResponse res) {
