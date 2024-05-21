@@ -16,6 +16,7 @@ public class ProductController {
     public String getProducts(@AuthenticationPrincipal UserDetailsImpl userDetails) {
         User user = userDetails.getUser();
         System.out.println("user.getUsername() = " + user.getUsername());
+        System.out.println("user.getEmail() = " + user.getEmail());
 
         return "redirect:/";
     }
