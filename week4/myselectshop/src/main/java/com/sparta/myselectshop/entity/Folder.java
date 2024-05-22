@@ -27,7 +27,7 @@ public class Folder {
     private User user;
 
     @OneToMany(mappedBy = "folder")
-    private List<Folder> productFolderList = new ArrayList<>();
+    private List<ProductFolder> productFolderList = new ArrayList<>();
 
     public Folder(String name, User user) {
         this.name = name;
