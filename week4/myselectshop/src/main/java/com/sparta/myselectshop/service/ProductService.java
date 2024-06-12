@@ -23,9 +23,10 @@ import java.util.Optional;
 public class ProductService {
 
     private final ProductRepository productRepository;
-    private final FolderRepository folderRepository;
     private final ProductFolderRepository productFolderRepository;
+    private final FolderRepository folderRepository;
     public static final int MIN_MY_PRICE = 100;
+
 
     public ProductResponseDto createProduct(ProductRequestDto requestDto, User user) {
         Product product = productRepository.save(new Product(requestDto, user));
